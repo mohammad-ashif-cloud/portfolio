@@ -2,13 +2,13 @@
 
 # MOHD ASHIF
 
-### Software Engineer &nbsp;·&nbsp; React.js &nbsp;|&nbsp; Next.js &nbsp;|&nbsp; JavaScript &nbsp;|&nbsp; Laravel
+### Software Engineer &nbsp;·&nbsp; React.js &nbsp;|&nbsp; Next.js &nbsp;|&nbsp; JavaScript &nbsp;|&nbsp; Laravel &nbsp;|&nbsp; PHP
 
 **New Delhi, India &nbsp;·&nbsp; Immediate Joiner**
 
 [![Email](https://img.shields.io/badge/Email-mohammadasif948%40gmail.com-E8A020?style=flat-square&logo=gmail&logoColor=white)](mailto:mohammadasif948@gmail.com)
 [![Phone](https://img.shields.io/badge/Phone-%2B91%2098211%2002061-2E6DA8?style=flat-square&logo=whatsapp&logoColor=white)](tel:+919821102061)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_USERNAME)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohd-ashif-783567151)
 [![Location](https://img.shields.io/badge/Location-New%20Delhi%2C%20India-555?style=flat-square&logo=googlemaps&logoColor=white)](#)
 
 </div>
