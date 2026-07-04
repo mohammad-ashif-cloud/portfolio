@@ -222,35 +222,34 @@ document.querySelectorAll('.tilt').forEach(c => {
 /* ════════════════════════════════════════
    CONTACT FORM
 ════════════════════════════════════════ */
-document.getElementById('cform').addEventListener('submit', async e => {
+document.getElementById('cform').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const form = e.target;
     const btn = document.getElementById('form-btn');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form).entries());
 
-    const data = new FormData(form);
-    data.append('_captcha', 'false');
-    data.append('_subject', 'New message from Portfolio!');
-    data.append('_template', 'table');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
 
     try {
-        const res = await fetch('https://formsubmit.co/ajax/mohammadasif948@gmail.com', {
+        const res = await fetch('https://www.devopsdelhi.in/api/portfolio-contact', {
             method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: data
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data),
         });
-        const json = await res.json();
-        if (json.success === 'true' || json.success === true) {
+        const result = await res.json();
+
+        if (res.ok && result.success) {
             form.style.display = 'none';
             document.getElementById('fok').style.display = 'block';
         } else {
-            btn.textContent = 'Send Message →';
-            btn.disabled = false;
+            alert(Object.values(result.errors || {}).flat().join('\n') || 'Something went wrong.');
         }
-    } catch {
-        btn.textContent = 'Send Message →';
+    } catch (err) {
+        alert('Network error. Please try again later.');
+    } finally {
         btn.disabled = false;
+        btn.textContent = 'Send Message →';
     }
 });
 
