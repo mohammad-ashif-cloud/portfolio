@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohd Ashif — Software Engineer</title>
+  <meta name="description" content="Mohd Ashif is a Front-End Engineer based in New Delhi, India, with 6+ years of experience building scalable, high-traffic enterprise web applications. Specialising in React.js and Next.js." />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
+</head>
+<body>
+
+<!-- ── PRELOADER ── -->
+<div id="loader">
+  <div class="ld-logo">M<em>A</em></div>
+  <div class="ld-track"><div class="ld-bar"></div></div>
+</div>
+
+<!-- ── CURSOR ── -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- ── SCROLL PROGRESS ── -->
+<div id="prog"></div>
+
+<!-- ── BACK TO TOP ── -->
+<button id="btt" aria-label="Back to top">&#8679;</button>
+
+<!-- ── SOCIAL SIDEBAR ── -->
+<div class="sidebar">
+  <a href="mailto:mohammadasif948@gmail.com" title="Email">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/mohd-ashif-783567151/" target="_blank" rel="noopener" title="LinkedIn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://github.com/mohammad-ashif-cloud" target="_blank" rel="noopener" title="GitHub">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+  </a>
+</div>
+
+<!-- ── HEADER ── -->
+<header id="hdr">
+  <div class="hdr-in">
+    <a href="#" class="logo">MA<em>.</em>dev</a>
+    <ul class="nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#exp">Experience</a></li>
+      <li><a href="#proj">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ── MOBILE MENU ── -->
+<div id="mob">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#exp">Experience</a>
+    <a href="#proj">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <canvas id="canvas"></canvas>
+  <div class="hero-gfx"></div>
+  <div class="wrap">
+    <div class="hero-body">
+      <div class="hero-pill reveal"><div class="pill-dot"></div>Available &nbsp;&middot;&nbsp; Immediate Joiner &nbsp;&middot;&nbsp; New Delhi, India</div>
+      <p class="hero-hi reveal d1">Hello, I'm</p>
+      <h1 class="hero-name reveal d2">
+        <span class="f">MOHD</span>
+        <span class="l">ASHIF</span>
+      </h1>
+      <p class="typed-line reveal d3">I build <strong id="typed"></strong><span id="tcursor"></span></p>
+      <p class="hero-desc reveal d4">
+        Front-End Engineer with <strong>6+ years</strong> delivering enterprise B2B platforms &mdash;
+        from 4.6 million-product catalogues to real-time analytics dashboards.
+        Specialising in <strong>React.js, Next.js</strong> and performance-critical web applications.
+      </p>
+      <div class="cta-row reveal d4">
+        <a href="#proj" class="btn-p">View My Work &rarr;</a>
+        <a href="#contact" class="btn-s">Get in Touch</a>
+      </div>
+      <div class="hero-nums reveal">
+        <div class="hnum"><div class="hnum-n">6<em>+</em></div><div class="hnum-l">Years Exp.</div></div>
+        <div class="hnum"><div class="hnum-n">4.6<em>M</em></div><div class="hnum-l">Products</div></div>
+        <div class="hnum"><div class="hnum-n">3</div><div class="hnum-l">Companies</div></div>
+        <div class="hnum"><div class="hnum-n">10<em>+</em></div><div class="hnum-l">Tech Stack</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind"><div class="scroll-mouse"></div><span>Scroll</span></div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="av-wrap reveal">
+        <div class="av-frame">
+          <div class="av-spin"></div>
+          <div class="av-inner">M<em>A</em></div>
+        </div>
+        <div class="av-badge">
+          <div class="av-badge-l">Current Role</div>
+          <div class="av-badge-v">Software Engineer</div>
+        </div>
+        <div class="av-badge-2" style="top:20px;right:-20px;background:var(--bg-2);border:1px solid var(--border-2);border-radius:var(--r);padding:14px 20px;box-shadow:var(--shadow)">
+          <div class="av-badge-l">Availability</div>
+          <div class="av-badge-v" style="color:var(--teal)">Immediate</div>
+        </div>
+      </div>
+      <div>
+        <div class="tag reveal">About Me</div>
+        <h2 class="h2 reveal d1">Crafting <em>Experiences</em>,<br>Engineering Performance</h2>
+        <p class="about-text reveal d2">
+          I'm a Front-End Engineer based in <strong>New Delhi, India</strong>, with over <strong>6 years</strong>
+          of experience building scalable, high-traffic enterprise web applications. Currently at
+          <strong>NextGen Esolutions</strong>, I lead front-end development for global B2B platforms &mdash;
+          shipping features that serve millions of product pages and real-time dashboards.
+          My stack centres on <strong>React.js and Next.js</strong>, backed by strong command of
+          performance optimisation, SEO, and REST API integration.
+        </p>
+        <div class="cnt-grid reveal d3">
+          <div class="cnt-cell">
+            <div class="cnt-n"><span class="cnt" data-t="6">0</span><em>+</em></div>
+            <div class="cnt-l">Years Exp.</div>
+          </div>
+          <div class="cnt-cell">
+            <div class="cnt-n"><span class="cnt" data-t="4">0</span><em>.6M</em></div>
+            <div class="cnt-l">Products</div>
+          </div>
+          <div class="cnt-cell">
+            <div class="cnt-n"><span class="cnt" data-t="3">0</span></div>
+            <div class="cnt-l">Companies</div>
+          </div>
+        </div>
+        <div class="about-chips reveal d4">
+          <span class="chip">New Delhi, India</span>
+          <span class="chip">Immediate Joiner</span>
+          <span class="chip">Open to Remote</span>
+          <span class="chip">Hindi &middot; English</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SKILLS ══════════════ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="tag reveal">What I Know</div>
+    <h2 class="h2 reveal d1">Technical <em>Skills</em></h2>
+    <div class="tab-row reveal d2">
+      <button class="tbtn on" data-tab="fe">Frontend</button>
+      <button class="tbtn" data-tab="be">Backend</button>
+      <button class="tbtn" data-tab="tl">Tools</button>
+    </div>
+
+    <div class="tpane on" id="pfe">
+      <div class="sk-grid">
+        <div>
+          <div class="sk-item" data-lv="95"><div class="sk-top"><span class="sk-name">React.js</span><span class="sk-pct">95%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="92"><div class="sk-top"><span class="sk-name">Next.js</span><span class="sk-pct">92%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="90"><div class="sk-top"><span class="sk-name">JavaScript ES6+</span><span class="sk-pct">90%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="88"><div class="sk-top"><span class="sk-name">Redux Toolkit</span><span class="sk-pct">88%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+        </div>
+        <div>
+          <div class="sk-item" data-lv="95"><div class="sk-top"><span class="sk-name">HTML5 / CSS3</span><span class="sk-pct">95%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="86"><div class="sk-top"><span class="sk-name">Bootstrap</span><span class="sk-pct">86%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="83"><div class="sk-top"><span class="sk-name">Formik</span><span class="sk-pct">83%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="80"><div class="sk-top"><span class="sk-name">Context API</span><span class="sk-pct">80%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpane" id="pbe">
+      <div class="sk-grid">
+        <div>
+          <div class="sk-item" data-lv="85"><div class="sk-top"><span class="sk-name">Laravel</span><span class="sk-pct">85%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="80"><div class="sk-top"><span class="sk-name">PHP</span><span class="sk-pct">80%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="90"><div class="sk-top"><span class="sk-name">REST APIs / Axios</span><span class="sk-pct">90%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+        </div>
+        <div>
+          <div class="sk-item" data-lv="78"><div class="sk-top"><span class="sk-name">MySQL</span><span class="sk-pct">78%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="83"><div class="sk-top"><span class="sk-name">JWT / Laravel Sanctum</span><span class="sk-pct">83%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="sk-item" data-lv="76"><div class="sk-top"><span class="sk-name">amCharts</span><span class="sk-pct">76%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpane" id="ptl">
+      <div class="tool-wrap">
+        <div class="tool-chip"><div class="td g"></div>Git &amp; GitHub</div>
+        <div class="tool-chip"><div class="td b"></div>Jira</div>
+        <div class="tool-chip"><div class="td t"></div>Postman</div>
+        <div class="tool-chip"><div class="td g"></div>npm</div>
+        <div class="tool-chip"><div class="td b"></div>VS Code</div>
+        <div class="tool-chip"><div class="td t"></div>Agile / Scrum</div>
+        <div class="tool-chip"><div class="td g"></div>Code Reviews</div>
+        <div class="tool-chip"><div class="td b"></div>Core Web Vitals</div>
+        <div class="tool-chip"><div class="td t"></div>SEO Optimisation</div>
+        <div class="tool-chip"><div class="td g"></div>Lazy Loading</div>
+        <div class="tool-chip"><div class="td b"></div>Image Optimisation</div>
+        <div class="tool-chip"><div class="td t"></div>Cross-browser Testing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ EXPERIENCE ══════════════ -->
+<section id="exp">
+  <div class="wrap">
+    <div class="tag reveal">Work History</div>
+    <h2 class="h2 reveal d1">Professional <em>Experience</em></h2>
+    <div style="height:48px"></div>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-dot live"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-role">Software Engineer</div>
+            <div class="tl-when">2023 &mdash; Present</div>
+          </div>
+          <div class="tl-co">NextGen Esolutions Pvt. Ltd.</div>
+          <ul class="tl-pts">
+            <li>Engineered enterprise B2B web apps end-to-end with React.js, Next.js (Pages &amp; App Router), and Laravel.</li>
+            <li>Built PLP, category pages, and search with filtering, sorting, and pagination for a catalogue of ~4.6 million products.</li>
+            <li>Created interactive analytics dashboards with amCharts, surfacing key business metrics for stakeholders.</li>
+            <li>Improved Core Web Vitals via lazy loading, dynamic imports, image optimisation, and on-page SEO.</li>
+            <li>Implemented JWT, Laravel Sanctum, and session-based auth flows for user and admin access.</li>
+            <li>Collaborated in a 5-member Agile team using Jira, Git, pull requests, and code reviews.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">React.js</span><span class="tl-tag">Next.js</span>
+            <span class="tl-tag">Redux</span><span class="tl-tag">Laravel</span>
+            <span class="tl-tag">amCharts</span><span class="tl-tag">JWT</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-role">Frontend Developer</div>
+            <div class="tl-when">2021 &mdash; 2023</div>
+          </div>
+          <div class="tl-co">NextGen Esolutions Pvt. Ltd.</div>
+          <ul class="tl-pts">
+            <li>Migrated legacy jQuery modules to modern, maintainable React components, improving code quality and UI consistency.</li>
+            <li>Integrated Laravel REST APIs and delivered responsive UIs across devices.</li>
+            <li>Supported production releases and resolved bugs to maintain application stability.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">React.js</span><span class="tl-tag">jQuery</span>
+            <span class="tl-tag">Laravel</span><span class="tl-tag">REST API</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-role">PHP Developer</div>
+            <div class="tl-when">2020 &mdash; 2021</div>
+          </div>
+          <div class="tl-co">Startup CA</div>
+          <ul class="tl-pts">
+            <li>Built PHP/Laravel web applications and CMS solutions from requirements to delivery.</li>
+            <li>Managed deployments, hosting, and MySQL database integration.</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">PHP</span><span class="tl-tag">Laravel</span><span class="tl-tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROJECTS ══════════════ -->
+<section id="proj">
+  <div class="wrap">
+    <div class="tag reveal">Portfolio</div>
+    <h2 class="h2 reveal d1">Featured <em>Projects</em></h2>
+    <p class="sub reveal d2" style="margin-bottom:36px">A selection of work showing how I approach complex problems at scale.</p>
+    <div class="filter-row reveal d2">
+      <button class="fbtn on" data-f="all">All</button>
+      <button class="fbtn" data-f="react">React</button>
+      <button class="fbtn" data-f="nextjs">Next.js</button>
+      <button class="fbtn" data-f="laravel">Laravel</button>
+      <button class="fbtn" data-f="php">PHP</button>
+    </div>
+    <div class="proj-grid">
+      <div class="pcard tilt reveal" data-tags="react nextjs redux">
+        <div class="p-num">01</div>
+        <div class="p-cat">B2B eCommerce &middot; Enterprise</div>
+        <h3 class="p-name">Raptor Supplies</h3>
+        <p class="p-desc">Global industrial supply platform with 4.6 million products. Built product listing pages, category pages, and search with advanced filtering, pagination, and analytics dashboards. Heavy focus on performance and SEO.</p>
+        <div class="p-tags">
+          <span class="p-tag">React.js</span><span class="p-tag">Next.js</span>
+          <span class="p-tag">Redux</span><span class="p-tag">Formik</span>
+          <span class="p-tag">amCharts</span><span class="p-tag">Axios</span>
+        </div>
+      </div>
+      <div class="pcard tilt reveal d1" data-tags="laravel php">
+        <div class="p-num">02</div>
+        <div class="p-cat">Travel &middot; Booking Platform</div>
+        <h3 class="p-name">Aadishakti Travels</h3>
+        <p class="p-desc">Developed booking workflows and dynamic content modules for a travel agency. Implemented responsive UI and form-driven enquiry flows with full Laravel backend integration.</p>
+        <div class="p-tags">
+          <span class="p-tag">Laravel</span><span class="p-tag">PHP</span>
+          <span class="p-tag">Bootstrap</span><span class="p-tag">MySQL</span>
+        </div>
+      </div>
+      <div class="pcard tilt reveal d2" data-tags="laravel php">
+        <div class="p-num">03</div>
+        <div class="p-cat">Travel &middot; CMS &amp; SEO</div>
+        <h3 class="p-name">South North Travels</h3>
+        <p class="p-desc">CMS features, enquiry forms, SEO improvements, and performance optimisation for a travel agency site. Delivered measurable improvements in page load times and search visibility.</p>
+        <div class="p-tags">
+          <span class="p-tag">Laravel</span><span class="p-tag">PHP</span>
+          <span class="p-tag">SEO</span><span class="p-tag">Performance</span>
+        </div>
+      </div>
+      <div class="pcard tilt reveal d3" data-tags="php">
+        <div class="p-num">04</div>
+        <div class="p-cat">Arts &middot; Business Website</div>
+        <h3 class="p-name">Tarun Art Gallery</h3>
+        <p class="p-desc">Maintained and optimised a business website and CMS for an art gallery. Handled ongoing maintenance, content updates, and performance improvements.</p>
+        <div class="p-tags">
+          <span class="p-tag">PHP</span><span class="p-tag">CMS</span>
+          <span class="p-tag">jQuery</span><span class="p-tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="tag reveal">Get in Touch</div>
+    <h2 class="h2 reveal d1">Let's <em>Work Together</em></h2>
+    <div class="con-grid">
+      <div>
+        <p class="con-intro reveal d2">
+          I'm open to new opportunities and always excited to discuss challenging projects.
+          Whether you have a position in mind, a project to build, or just want to connect &mdash;
+          my inbox is open.
+        </p>
+        <div class="con-links reveal d3">
+          <a href="mailto:mohammadasif948@gmail.com" class="con-link">
+            <div class="con-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div><div class="con-lbl">Email</div><div class="con-val">mohammadasif948@gmail.com</div></div>
+          </a>
+          <a href="tel:+919821102061" class="con-link">
+            <div class="con-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div><div class="con-lbl">Phone</div><div class="con-val">+91 98211 02061</div></div>
+          </a>
+          <div class="con-link">
+            <div class="con-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div><div class="con-lbl">Location</div><div class="con-val">New Delhi, India</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form class="form" id="cform">
+          <div class="form-row">
+            <div class="fld"><label>Your Name</label><input type="text" placeholder="John Doe" required /></div>
+            <div class="fld"><label>Email Address</label><input type="email" placeholder="john@company.com" required /></div>
+          </div>
+          <div class="fld"><label>Subject</label><input type="text" placeholder="Job Opportunity / Project Inquiry" required /></div>
+          <div class="fld"><label>Message</label><textarea placeholder="Tell me about your project or opportunity..." required></textarea></div>
+          <button type="submit" class="form-btn">Send Message &rarr;</button>
+        </form>
+        <div class="form-ok" id="fok">
+          &#10003;&nbsp; Message received! I'll get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <p class="foot">Designed &amp; built by <em>Mohd Ashif</em> &nbsp;&middot;&nbsp; Software Engineer &nbsp;&middot;&nbsp; New Delhi, India</p>
+  </div>
+</footer>
+
+<script src="assets/js/portfolio.js"></script>
+
+</body>
+</html>
