@@ -188,7 +188,7 @@ Built PLP, category pages, search with advanced filtering, pagination, and analy
 ### Let's Connect
 
 [![Email](https://img.shields.io/badge/mohammadasif948%40gmail.com-F0A500?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mohammadasif948@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN_USERNAME)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohd-ashif-783567151/)
 [![Phone](https://img.shields.io/badge/%2B91%2098211%2002061-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+919821102061)
 
 <br/>
