@@ -49,8 +49,7 @@ languages:   Hindi (Native) · English (Professional)
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=mohammad-ashif-cloud&show_icons=true&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E&count_private=true&include_all_commits=true" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=mohammad-ashif-cloud&hide_border=true&ring=F0A500&fire=F0A500&currStreakLabel=F0A500&background=060E1E&stroke=0F2040&currStreakNum=EDF2FF&sideLabels=8BA4C8&sideNums=EDF2FF&dates=8BA4C8" />
+<img width="70%" src="https://github-readme-streak-stats.herokuapp.com?user=mohammad-ashif-cloud&hide_border=true&ring=F0A500&fire=F0A500&currStreakLabel=F0A500&background=060E1E&stroke=0F2040&currStreakNum=EDF2FF&sideLabels=8BA4C8&sideNums=EDF2FF&dates=8BA4C8" />
 
 </div>
 
