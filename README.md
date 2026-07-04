@@ -35,39 +35,13 @@ languages:   Hindi (Native) · English (Professional)
 
 ## Tech Stack
 
-**Frontend**
+<div align="center">
 
-![React](https://img.shields.io/badge/React.js-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jquery&logoColor=white)
+<img src="https://skillicons.dev/icons?i=react,nextjs,js,ts,html,css&perline=6" /><br/>
+<img src="https://skillicons.dev/icons?i=bootstrap,redux,jquery,php,laravel,mysql&perline=6" /><br/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,postman,figma,npm&perline=6" />
 
-**State Management & Forms**
-
-![Redux](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white)
-![Context API](https://img.shields.io/badge/Context%20API-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Formik](https://img.shields.io/badge/Formik-172B4D?style=flat-square&logo=formik&logoColor=white)
-![amCharts](https://img.shields.io/badge/amCharts-FF3D00?style=flat-square&logoColor=white)
-
-**Backend & Database**
-
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-
-**Tools & Workflow**
-
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white)
-![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
+</div>
 
 ---
 
@@ -75,33 +49,8 @@ languages:   Hindi (Native) · English (Professional)
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats-eight-rho.vercel.app/api?username=mohammad-ashif-cloud&show_icons=true&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E&count_private=true&rank_icon=github&cache_seconds=1800" />
-&nbsp;
-<img height="180" src="https://github-readme-stats-eight-rho.vercel.app/api/top-langs/?username=mohammad-ashif-cloud&layout=compact&hide_border=true&title_color=F0A500&text_color=8BA4C8&bg_color=060E1E&langs_count=8&cache_seconds=1800" />
-
-<br/><br/>
-
-<img width="70%" src="https://github-readme-streak-stats.herokuapp.com?user=mohammad-ashif-cloud&hide_border=true&ring=F0A500&fire=F0A500&currStreakLabel=F0A500&background=060E1E&stroke=0F2040&currStreakNum=EDF2FF&sideLabels=8BA4C8&sideNums=EDF2FF&dates=8BA4C8" />
-
-</div>
-
----
-
-## Contribution Activity
-
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mohammad-ashif-cloud&theme=tokyo-night&hide_border=true&bg_color=060E1E&color=8BA4C8&line=F0A500&point=3D8EF5&area=true&area_color=F0A500)](https://github.com/mohammad-ashif-cloud)
-
-</div>
-
----
-
-## Trophies
-
-<div align="center">
-
-[![Trophies](https://github-profile-trophy.vercel.app/?username=mohammad-ashif-cloud&theme=tokyonight&no-frame=true&no-bg=true&column=6&margin-w=8&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C)](https://github.com/mohammad-ashif-cloud)
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=mohammad-ashif-cloud&show_icons=true&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E&count_private=true&include_all_commits=true" />
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=mohammad-ashif-cloud&hide_border=true&ring=F0A500&fire=F0A500&currStreakLabel=F0A500&background=060E1E&stroke=0F2040&currStreakNum=EDF2FF&sideLabels=8BA4C8&sideNums=EDF2FF&dates=8BA4C8" />
 
 </div>
 
