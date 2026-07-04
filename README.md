@@ -75,9 +75,9 @@ languages:   Hindi (Native) · English (Professional)
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=mohammad-ashif-cloud&show_icons=true&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E&count_private=true&rank_icon=github" />
+<img height="180" src="https://github-readme-stats-eight-rho.vercel.app/api?username=mohammad-ashif-cloud&show_icons=true&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E&count_private=true&rank_icon=github&cache_seconds=1800" />
 &nbsp;
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohammad-ashif-cloud&layout=compact&hide_border=true&title_color=F0A500&text_color=8BA4C8&bg_color=060E1E&langs_count=8" />
+<img height="180" src="https://github-readme-stats-eight-rho.vercel.app/api/top-langs/?username=mohammad-ashif-cloud&layout=compact&hide_border=true&title_color=F0A500&text_color=8BA4C8&bg_color=060E1E&langs_count=8&cache_seconds=1800" />
 
 <br/><br/>
 
@@ -101,7 +101,7 @@ languages:   Hindi (Native) · English (Professional)
 
 <div align="center">
 
-[![Trophies](https://github-profile-trophy.vercel.app/?username=mohammad-ashif-cloud&theme=tokyonight&no-frame=true&column=6&margin-w=8)](https://github.com/mohammad-ashif-cloud)
+[![Trophies](https://github-profile-trophy.vercel.app/?username=mohammad-ashif-cloud&theme=tokyonight&no-frame=true&no-bg=true&column=6&margin-w=8&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C)](https://github.com/mohammad-ashif-cloud)
 
 </div>
 
@@ -151,26 +151,45 @@ languages:   Hindi (Native) · English (Professional)
 
 ## Featured Projects
 
-<div align="center">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-[![Raptor Supplies](https://github-readme-stats.vercel.app/api/pin/?username=mohammad-ashif-cloud&repo=raptor-supplies&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E)](https://github.com/mohammad-ashif-cloud)
-[![Portfolio](https://github-readme-stats.vercel.app/api/pin/?username=mohammad-ashif-cloud&repo=portfolio&hide_border=true&title_color=F0A500&icon_color=3D8EF5&text_color=8BA4C8&bg_color=060E1E)](https://github.com/mohammad-ashif-cloud)
+### 🛒 Raptor Supplies
+> B2B eCommerce Platform
 
-</div>
+Global industrial supply platform with **4.6 million products**. Built PLP, category pages, search with advanced filtering, pagination, and analytics dashboards.
 
-### Raptor Supplies — B2B eCommerce Platform
-> Global industrial supply platform · **4.6 million products** · React.js · Next.js · amCharts
+![React](https://img.shields.io/badge/React.js-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![amCharts](https://img.shields.io/badge/amCharts-FF3D00?style=flat-square)
 
-Built PLP, category pages, search with advanced filtering, pagination, and analytics dashboards. Heavy focus on performance, Core Web Vitals, and SEO for a high-traffic global catalogue.
+</td>
+<td width="50%" valign="top">
 
-`React.js` `Next.js` `Redux Toolkit` `Formik` `amCharts` `Axios` `Laravel` `JWT`
+### 💼 Portfolio
+> Personal Portfolio Site
+
+Feature-packed personal portfolio with canvas particle animation, custom cursor, 3D card tilt, skill progress bars, and scroll-reveal animations.
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+[![View Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/mohammad-ashif-cloud/portfolio)
+
+</td>
+</tr>
+</table>
 
 ---
 
 ### Other Projects
 
-| Project | Stack | Description |
-|---------|-------|-------------|
+| Project | Stack | Highlights |
+|---------|-------|------------|
 | **Aadishakti Travels** | Laravel · PHP · Bootstrap | Booking workflows, dynamic modules, enquiry forms |
 | **South North Travels** | Laravel · PHP · SEO | CMS features, performance optimisation, SEO improvements |
 | **Tarun Art Gallery** | PHP · jQuery · CMS | Business website maintenance and content management |
