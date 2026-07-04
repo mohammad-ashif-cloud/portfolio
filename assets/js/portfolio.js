@@ -222,10 +222,36 @@ document.querySelectorAll('.tilt').forEach(c => {
 /* ════════════════════════════════════════
    CONTACT FORM
 ════════════════════════════════════════ */
-document.getElementById('cform').addEventListener('submit', e => {
+document.getElementById('cform').addEventListener('submit', async e => {
     e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById('fok').style.display = 'block';
+    const form = e.target;
+    const btn = document.getElementById('form-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    data.append('_captcha', 'false');
+    data.append('_subject', 'New message from Portfolio!');
+    data.append('_template', 'table');
+
+    try {
+        const res = await fetch('https://formsubmit.co/ajax/mohammadasif948@gmail.com', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: data
+        });
+        const json = await res.json();
+        if (json.success === 'true' || json.success === true) {
+            form.style.display = 'none';
+            document.getElementById('fok').style.display = 'block';
+        } else {
+            btn.textContent = 'Send Message →';
+            btn.disabled = false;
+        }
+    } catch {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+    }
 });
 
 /* ════════════════════════════════════════

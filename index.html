@@ -380,12 +380,12 @@
       <div class="reveal d2">
         <form class="form" id="cform">
           <div class="form-row">
-            <div class="fld"><label>Your Name</label><input type="text" placeholder="John Doe" required /></div>
-            <div class="fld"><label>Email Address</label><input type="email" placeholder="john@company.com" required /></div>
+            <div class="fld"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required /></div>
+            <div class="fld"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required /></div>
           </div>
-          <div class="fld"><label>Subject</label><input type="text" placeholder="Job Opportunity / Project Inquiry" required /></div>
-          <div class="fld"><label>Message</label><textarea placeholder="Tell me about your project or opportunity..." required></textarea></div>
-          <button type="submit" class="form-btn">Send Message &rarr;</button>
+          <div class="fld"><label>Subject</label><input type="text" name="subject" placeholder="Job Opportunity / Project Inquiry" required /></div>
+          <div class="fld"><label>Message</label><textarea name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+          <button type="submit" class="form-btn" id="form-btn">Send Message &rarr;</button>
         </form>
         <div class="form-ok" id="fok">
           &#10003;&nbsp; Message received! I'll get back to you within 24 hours.
