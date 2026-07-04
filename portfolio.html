@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohd Ashif — Software Engineer</title>
+  <style>
+    :root {
+      --ground: #0B1829;
+      --ground-raised: #0F2236;
+      --ground-high: #162842;
+      --text: #E6EDF8;
+      --text-muted: #7A96B5;
+      --text-faint: #35506A;
+      --accent: #E8A020;
+      --accent-dim: rgba(232,160,32,0.12);
+      --blue: #4A8FD4;
+      --green: #5EBD8A;
+      --border: rgba(255,255,255,0.07);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --mono: 'Cascadia Code','Consolas','Courier New',monospace;
+      --max: 860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ground);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Header ── */
+    .hdr {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11,24,41,0.88);
+      backdrop-filter: blur(14px);
+    }
+    .hdr-id {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-faint);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .hdr-id em { color: var(--accent); font-style: normal; }
+    .hdr-nav { display: flex; gap: 32px; }
+    .hdr-nav a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .hdr-nav a:hover { color: var(--accent); }
+    .hdr-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(74,143,212,0.14) 1px, transparent 1px);
+      background-size: 30px 30px;
+      z-index: 0;
+    }
+    .hero-glow {
+      position: absolute;
+      top: 40%;
+      left: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(232,160,32,0.05) 0%, transparent 65%);
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: up 0.7s 0.1s ease forwards;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-size: clamp(54px, 9vw, 104px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: up 0.7s 0.2s ease forwards;
+    }
+    .hero-name .first { display: block; }
+    .hero-name .last  { display: block; color: var(--accent); }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: up 0.7s 0.3s ease forwards;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: up 0.7s 0.4s ease forwards;
+    }
+    .chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 5px 14px;
+      border: 1px solid var(--text-faint);
+      color: var(--text-muted);
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+    .chip.hi {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 52px;
+      padding-top: 44px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: up 0.7s 0.5s ease forwards;
+    }
+    .stat { display: flex; flex-direction: column; gap: 4px; }
+    .stat-n { font-size: 38px; font-weight: 800; color: var(--text); line-height: 1; }
+    .stat-n em { color: var(--accent); font-style: normal; }
+    .stat-l {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── Sections ── */
+    .sec {
+      padding: 96px 48px;
+      max-width: calc(var(--max) + 96px);
+      margin: 0 auto;
+    }
+    .sec-hd {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+    .sec-num { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.12em; }
+    .sec-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); }
+    .sec-rule { flex: 1; height: 1px; background: var(--border); }
+
+    /* ── About ── */
+    .about-body {
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+    .about-body strong { color: var(--text); font-weight: 600; }
+
+    /* ── Code Block / Skills ── */
+    .code-block {
+      background: var(--ground-raised);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .code-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.06em;
+    }
+    .code-dots { display: flex; gap: 6px; margin-right: auto; }
+    .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .code-dot.r { background: #E05252; }
+    .code-dot.y { background: #D4A017; }
+    .code-dot.g { background: #3DA85E; }
+    .code-inner {
+      padding: 24px 28px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.95;
+      white-space: pre;
+      overflow-x: auto;
+      display: block;
+    }
+    .tc  { color: #7DD3FC; }
+    .tp  { color: var(--green); }
+    .tv  { color: var(--accent); }
+    .tb  { color: var(--text-faint); }
+    .tcm { color: #2A4A68; font-style: italic; }
+
+    /* ── Experience ── */
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 44px;
+      padding: 44px 0;
+      border-top: 1px solid var(--border);
+    }
+    .exp-row:last-child { border-bottom: 1px solid var(--border); }
+    .exp-meta { padding-top: 2px; }
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      line-height: 1.9;
+      white-space: nowrap;
+    }
+    .exp-badge {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 9px;
+      padding: 3px 9px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+      border-radius: 2px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .exp-role { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .exp-co { font-family: var(--mono); font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+    .exp-pts { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .exp-pts li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .exp-pts li::before {
+      content: '\2192';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+      top: 2px;
+    }
+
+    /* ── Projects ── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .proj-card {
+      background: var(--ground-raised);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.18s;
+    }
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .proj-card:hover { background: var(--ground-high); }
+    .proj-card:hover::before { transform: scaleX(1); }
+    .proj-eye {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .proj-name { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 12px; line-height: 1.25; }
+    .proj-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 22px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 3px 11px;
+      background: var(--ground);
+      border: 1px solid var(--text-faint);
+      color: var(--text-muted);
+      border-radius: 2px;
+    }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .contact-card {
+      background: var(--ground-raised);
+      padding: 32px 36px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.18s;
+    }
+    .contact-card:hover { background: var(--ground-high); }
+    .contact-card:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .c-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .c-value { font-size: 14px; color: var(--text); word-break: break-all; }
+
+    /* ── Footer ── */
+    .ftr {
+      padding: 44px 48px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      margin-top: 20px;
+    }
+    .ftr-text { font-family: var(--mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.1em; }
+
+    /* ── Animation ── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .hdr { padding: 14px 24px; }
+      .hdr-nav { gap: 18px; }
+      .hdr-nav a { font-size: 11px; }
+      .hero { padding: 100px 24px 60px; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+      .sec { padding: 60px 24px; }
+      .exp-row { grid-template-columns: 1fr; gap: 4px; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-id">ma.<em>dev</em></div>
+  <nav class="hdr-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Front-End Engineer &nbsp;&middot;&nbsp; New Delhi, India &nbsp;&middot;&nbsp; Immediate Joiner</div>
+    <h1 class="hero-name">
+      <span class="first">MOHD</span>
+      <span class="last">ASHIF</span>
+    </h1>
+    <p class="hero-sub">
+      Building <strong>enterprise-scale web applications</strong> with React.js and Next.js &mdash;
+      from 4.6 million-product catalogues to analytics dashboards used by global B2B buyers.
+    </p>
+    <div class="hero-chips">
+      <span class="chip hi">React.js</span>
+      <span class="chip hi">Next.js</span>
+      <span class="chip hi">JavaScript ES6+</span>
+      <span class="chip">Laravel</span>
+      <span class="chip">Redux Toolkit</span>
+      <span class="chip">REST APIs</span>
+      <span class="chip">PHP</span>
+      <span class="chip">MySQL</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">6<em>+</em></div>
+        <div class="stat-l">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">4.6<em>M</em></div>
+        <div class="stat-l">Products Shipped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Companies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="sec-hd">
+    <span class="sec-num">01</span>
+    <span class="sec-title">About</span>
+    <div class="sec-rule"></div>
+  </div>
+  <p class="about-body">
+    I engineer <strong>production-grade front ends</strong> for high-traffic B2B platforms &mdash; the kind
+    where a slow page costs real sales. My work at NextGen Esolutions spans <strong>product listing
+    pages, search, filtering, and analytics dashboards</strong> for a catalogue of 4.6 million items.
+    I care about Core Web Vitals, maintainable component architecture, and shipping features that hold
+    up under load. On the backend I reach for <strong>Laravel and PHP</strong> when the job needs it.
+  </p>
+</section>
+
+<section class="sec" id="skills">
+  <div class="sec-hd">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Skills</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="code-block">
+    <div class="code-bar">
+      <div class="code-dots">
+        <span class="code-dot r"></span>
+        <span class="code-dot y"></span>
+        <span class="code-dot g"></span>
+      </div>
+      skills.jsx
+    </div>
+    <div class="code-inner"><span class="tcm">// technology proficiency &mdash; rendered as a component tree</span>
+<span class="tb">&lt;</span><span class="tc">App</span> <span class="tp">engineer</span>=<span class="tv">"Mohd Ashif"</span> <span class="tp">experience</span>=<span class="tv">"6+"</span> <span class="tp">location</span>=<span class="tv">"New Delhi, IN"</span><span class="tb">&gt;</span>
+
+  <span class="tcm">{/* &#8212;&#8212; Front-End &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; */}</span>
+  <span class="tb">&lt;</span><span class="tc">Frontend</span> <span class="tp">priority</span>=<span class="tv">"primary"</span><span class="tb">&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">React</span>      <span class="tp">ecosystem</span>=<span class="tv">"full"</span>        <span class="tp">level</span>=<span class="tv">"senior"</span> <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">NextJs</span>     <span class="tp">router</span>=<span class="tv">["pages", "app"]</span>              <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">JavaScript</span> <span class="tp">spec</span>=<span class="tv">"ES6+"</span>                         <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">HTML5</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">CSS3</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">Bootstrap</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">jQuery</span> <span class="tb">/&gt;</span>
+  <span class="tb">&lt;/</span><span class="tc">Frontend</span><span class="tb">&gt;</span>
+
+  <span class="tcm">{/* &#8212;&#8212; State &amp; Forms &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; */}</span>
+  <span class="tb">&lt;</span><span class="tc">StateManagement</span><span class="tb">&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">ReduxToolkit</span> <span class="tp">pattern</span>=<span class="tv">"slices+thunks"</span>      <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">ContextAPI</span>   <span class="tp">scope</span>=<span class="tv">"shared-state"</span>         <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Formik</span>       <span class="tp">validation</span>=<span class="tv">"complex-schemas"</span>  <span class="tb">/&gt;</span>
+  <span class="tb">&lt;/</span><span class="tc">StateManagement</span><span class="tb">&gt;</span>
+
+  <span class="tcm">{/* &#8212;&#8212; Data Visualisation &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; */}</span>
+  <span class="tb">&lt;</span><span class="tc">DataViz</span><span class="tb">&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">amCharts</span> <span class="tp">type</span>=<span class="tv">"analytics-dashboards"</span>      <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Axios</span>    <span class="tp">usage</span>=<span class="tv">"REST-API-integration"</span>      <span class="tb">/&gt;</span>
+  <span class="tb">&lt;/</span><span class="tc">DataViz</span><span class="tb">&gt;</span>
+
+  <span class="tcm">{/* &#8212;&#8212; Backend &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; */}</span>
+  <span class="tb">&lt;</span><span class="tc">Backend</span><span class="tb">&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Laravel</span> <span class="tp">version</span>=<span class="tv">"10+"</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">PHP</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">MySQL</span> <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Auth</span>    <span class="tp">methods</span>=<span class="tv">["JWT", "Sanctum", "Session"]</span> <span class="tb">/&gt;</span>
+  <span class="tb">&lt;/</span><span class="tc">Backend</span><span class="tb">&gt;</span>
+
+  <span class="tcm">{/* &#8212;&#8212; Tooling &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; */}</span>
+  <span class="tb">&lt;</span><span class="tc">Tooling</span><span class="tb">&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Git</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">GitHub</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">Jira</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">Postman</span> <span class="tb">/&gt;</span>  <span class="tb">&lt;</span><span class="tc">npm</span> <span class="tb">/&gt;</span>
+    <span class="tb">&lt;</span><span class="tc">Methodology</span> <span class="tp">workflow</span>=<span class="tv">"Agile"</span> <span class="tp">codeReview</span>=<span class="tv">{true}</span> <span class="tb">/&gt;</span>
+  <span class="tb">&lt;/</span><span class="tc">Tooling</span><span class="tb">&gt;</span>
+
+<span class="tb">&lt;/</span><span class="tc">App</span><span class="tb">&gt;</span></div>
+  </div>
+</section>
+
+<section class="sec" id="experience">
+  <div class="sec-hd">
+    <span class="sec-num">03</span>
+    <span class="sec-title">Experience</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="exp-list">
+    <div class="exp-row">
+      <div class="exp-meta">
+        <div class="exp-period">2023<br>&mdash;<br>Present</div>
+        <div class="exp-badge">Current</div>
+      </div>
+      <div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-co">NextGen Esolutions Pvt. Ltd.</div>
+        <ul class="exp-pts">
+          <li>Engineered enterprise B2B web apps end-to-end with React.js, Next.js (Pages &amp; App Router), and Laravel.</li>
+          <li>Built product listing pages, category pages, and search with filtering, sorting, and pagination for a catalogue of ~4.6 million products.</li>
+          <li>Created interactive analytics dashboards with amCharts, surfacing key business metrics for stakeholders.</li>
+          <li>Improved Core Web Vitals via lazy loading, dynamic imports, image optimisation, and on-page SEO.</li>
+          <li>Implemented JWT, Laravel Sanctum, and session-based auth flows for user and admin access.</li>
+          <li>Collaborated in a 5-member Agile team; handled production debugging and cross-browser compatibility.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-meta">
+        <div class="exp-period">2021<br>&mdash;<br>2023</div>
+      </div>
+      <div>
+        <div class="exp-role">Frontend Developer</div>
+        <div class="exp-co">NextGen Esolutions Pvt. Ltd.</div>
+        <ul class="exp-pts">
+          <li>Migrated legacy jQuery modules to modern, maintainable React components, improving code quality and UI consistency.</li>
+          <li>Integrated Laravel REST APIs and delivered responsive UIs across devices.</li>
+          <li>Supported production releases and resolved bugs to maintain application stability.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-meta">
+        <div class="exp-period">2020<br>&mdash;<br>2021</div>
+      </div>
+      <div>
+        <div class="exp-role">PHP Developer</div>
+        <div class="exp-co">Startup CA</div>
+        <ul class="exp-pts">
+          <li>Built PHP/Laravel web applications and CMS solutions from requirements to delivery.</li>
+          <li>Managed deployments, hosting, and MySQL database integration.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="projects">
+  <div class="sec-hd">
+    <span class="sec-num">04</span>
+    <span class="sec-title">Projects</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-eye">B2B eCommerce &middot; Enterprise</div>
+      <h3 class="proj-name">Raptor Supplies</h3>
+      <p class="proj-desc">Global industrial supply platform with 4.6 million products. Built PLP, category pages, and search with advanced filtering, pagination, and analytics dashboards. Focused on performance and SEO for a high-traffic catalogue.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">React.js</span>
+        <span class="proj-tag">Next.js</span>
+        <span class="proj-tag">Formik</span>
+        <span class="proj-tag">amCharts</span>
+        <span class="proj-tag">Redux</span>
+        <span class="proj-tag">Axios</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Travel &middot; Booking Platform</div>
+      <h3 class="proj-name">Aadishakti Travels</h3>
+      <p class="proj-desc">Developed booking workflows and dynamic content modules for a travel agency. Implemented responsive UI and form-driven enquiry flows with full Laravel backend integration.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Laravel</span>
+        <span class="proj-tag">PHP</span>
+        <span class="proj-tag">Bootstrap</span>
+        <span class="proj-tag">MySQL</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Travel &middot; CMS</div>
+      <h3 class="proj-name">South North Travels</h3>
+      <p class="proj-desc">CMS features, enquiry forms, SEO improvements, and performance optimisation for a travel agency site. Delivered measurable improvements in page load times and search visibility.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Laravel</span>
+        <span class="proj-tag">PHP</span>
+        <span class="proj-tag">SEO</span>
+        <span class="proj-tag">Performance</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Arts &middot; Business Site</div>
+      <h3 class="proj-name">Tarun Art Gallery</h3>
+      <p class="proj-desc">Maintained and optimised a business website and content management system for an art gallery. Handled ongoing maintenance, content updates, and performance improvements.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">PHP</span>
+        <span class="proj-tag">CMS</span>
+        <span class="proj-tag">jQuery</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="sec-hd">
+    <span class="sec-num">05</span>
+    <span class="sec-title">Contact</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="contact-grid">
+    <a href="mailto:mohammadasif948@gmail.com" class="contact-card">
+      <div class="c-label">Email</div>
+      <div class="c-value">mohammadasif948@gmail.com</div>
+    </a>
+    <a href="tel:+919821102061" class="contact-card">
+      <div class="c-label">Phone</div>
+      <div class="c-value">+91 98211 02061</div>
+    </a>
+    <div class="contact-card">
+      <div class="c-label">Location</div>
+      <div class="c-value">New Delhi, India</div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="ftr-text">Mohd Ashif &nbsp;&middot;&nbsp; Software Engineer &nbsp;&middot;&nbsp; Open to opportunities</div>
+</footer>
+
+</body>
+</html>
